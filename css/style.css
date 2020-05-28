@@ -1,0 +1,231 @@
+:root {
+    font-size: 62.5%;
+    font-family: 'Lato', sans-serif;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --transition-speed: 600ms;
+}
+
+@font-face {
+    font-family: "Chumsky";
+    src: url(../font/Chomsky.otf);
+}
+
+body {
+    color: black;
+    background-color: white;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 1.5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #6649b8;
+}
+
+
+/* Fuente Custom*/
+
+.font-encabezado {
+    font-family: Chumsky;
+    font-size: 8rem;
+    font-weight: 300;
+}
+
+main {
+    margin-left: 10rem;
+}
+
+.navbar {
+    position: fixed;
+    background: var(--bg-primary);
+    transition: 200ms ease;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.nav-item:last-child {
+    margin-top: auto;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 8rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+.link-text {
+    display: none;
+    margin-left: 1.6rem;
+}
+
+.nav-link svg {
+    min-width: 3rem;
+    margin: 0 2.2rem;
+}
+
+.fa-secondary {
+    color: #71e016;
+}
+
+.fa-primary {
+    color: #bae00f;
+}
+
+.fa-primary,
+.fa-secondary {
+    transition: var(--transition-speed);
+}
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1.7rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1.9rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+.logo svg {
+    transform: rotate(0deg);
+    transition: transform var(--transition-speed);
+}
+
+.navbar:hover .logo svg {
+    transform: rotate(-180deg);
+    transition: transform var(--transition-speed);
+}
+
+
+/* main*/
+
+.arriba {
+    display: flex;
+    flex-direction: column;
+}
+
+.borde-abajo {
+    border-bottom: 2px double black;
+}
+
+.centrar {
+    margin: 0 auto;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+}
+
+.fecha {
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Cuerpo*/
+
+.cuerpo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.lados {
+    flex-basis: calc(25% - 1rem);
+    height: 40rem;
+}
+
+.centro {
+    flex-basis: calc(50% - 1rem);
+    height: 40rem;
+}
+
+.imagen-centro {
+    width: calc(90% - 1rem);
+    height: 80%;
+}
+
+
+/*smaller screens*/
+
+@media only screen and (max-width:600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vh;
+        height: 8rem;
+    }
+    .logo {
+        display: none;
+    }
+    .navbar-nav {
+        flex-direction: row;
+    }
+    .nav-link {
+        justify-content: center;
+    }
+    .nav-item {
+        width: 12rem;
+    }
+    main {
+        margin: 0;
+    }
+}
+
+
+/* larger screens */
+
+@media only screen and (min-width:600px) {
+    .navbar {
+        top: 0;
+        width: 8rem;
+        height: 100vh;
+    }
+    .navbar:hover {
+        width: 18rem;
+    }
+    .navbar:hover .link-text {
+        display: inline;
+        transition: opacity var(--transition-speed);
+    }
+}
